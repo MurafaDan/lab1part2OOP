@@ -27,7 +27,7 @@ void initVector(Vector *vector)
 
 void afisVector(Vector *vector)
 {
-    cout << "ID-ul: " << vector->id << " | Numarul de elemente: " << vector->nr << endl;
+    cout << "ID-ul: " << vector->id << " | Numarul de element: " << vector->nr << endl;
     cout << "Elementele vectorului:" << endl;
     for (int i = 0; i < vector->nr; i++)
     {
@@ -38,7 +38,7 @@ void afisVector(Vector *vector)
 
 void setSizeVector(Vector *vector)
 {
-    cout << "Dati marimea vectorului:" << endl
+    cout << "Dati lungimea vectorului:" << endl
          << ">>>";
     int len;
     cin >> len;
@@ -69,11 +69,11 @@ void compareVector(Vector *vector1, Vector *vector2)
     cout << vector1->id << "  " << vector2->id << endl;
     if (vector1->nr < vector2->nr)
     {
-        cout << "Vectorul cu ID" << vector2->id << " are cu " << vector2->nr - vector1->nr << " elemente." << endl;
+        cout << "Vectorul cu ID" << vector2->id << " are  " << vector2->nr - vector1->nr << " elemente." << endl;
     }
     else if (vector1->nr > vector2->nr)
     {
-        cout << "Vectorul cu ID" << vector1->id << " are cu " << vector1->nr - vector2->nr << " elemente." << endl;
+        cout << "Vectorul cu ID" << vector1->id << " are  " << vector1->nr - vector2->nr << " elemente." << endl;
     }
     else
     {
@@ -84,7 +84,7 @@ void compareVector(Vector *vector1, Vector *vector2)
 void modVector(Vector *vector)
 {
     afisVector(vector);
-    cout << "Introduceti elementele vectorului:" << endl;
+    cout << "Introduceti elementele vectorului ales:" << endl;
     for (int i = 0; i < vector->nr; i++)
     {
         cout << "Elementul" << i + 1 << " : ";
@@ -99,10 +99,10 @@ void randVector(Vector *vector)
     srand(time(NULL));
     for (int i = 0; i < vector->nr; i++)
     {
-        vector->el[i] = rand() % 200 - 100;
+        vector->el[i] = rand() % 250 - 100;
     }
     cout << endl
-         << "Vectorul generat:" << endl;
+         << "Vectorul :" << endl;
     afisVector(vector);
 }
 
@@ -128,14 +128,14 @@ void menu()
     while (1)
     {
         cout << "=============Menu==============" << endl;
-        cout << "1: Initializare new vector" << endl;
+        cout << "1: Initializare vector" << endl;
         cout << "2: Setare/modificare marime vector" << endl;
         cout << "3: Setare/modificare elemente vector" << endl;
-        cout << "4: Afisare vector" << endl;
-        cout << "5: Compara vector" << endl;
-        cout << "6: Delete vector" << endl;
+        cout << "4: Afisarea vectorului" << endl;
+        cout << "5: Comparare vector" << endl;
+        cout << "6: Stergere Vector" << endl;
         cout << "7: Produsul elentelor negative" << endl;
-        cout << "0: Exit" << endl
+        cout << "0: Iesire" << endl
              << ">>>";
         cin >> option;
 
